@@ -2,14 +2,12 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import sqlite3
 
-app = FastAPI(title="Dosa Restaurant API")
+app = FastAPI(title="API: Dosa Restaurant")
 
-# ----------- Customer Schema -----------
 class Customer(BaseModel):
     name: str
     phone: str
 
-# ----------- Create Customer -----------
 @app.post("/customers/")
 def create_customer(customer: Customer):
     conn = sqlite3.connect("db.sqlite")
@@ -24,7 +22,6 @@ def create_customer(customer: Customer):
     finally:
         conn.close()
 
-# ----------- Get Customer by ID -----------
 @app.get("/customers/{customer_id}")
 def get_customer(customer_id: int):
     conn = sqlite3.connect("db.sqlite")
@@ -37,7 +34,6 @@ def get_customer(customer_id: int):
     else:
         raise HTTPException(status_code=404, detail="Customer not found")
 
-# ----------- Update Customer -----------
 @app.put("/customers/{customer_id}")
 def update_customer(customer_id: int, customer: Customer):
     conn = sqlite3.connect("db.sqlite")
@@ -51,7 +47,6 @@ def update_customer(customer_id: int, customer: Customer):
     conn.close()
     return {"message": "Customer updated successfully"}
 
-# ----------- Delete Customer -----------
 @app.delete("/customers/{customer_id}")
 def delete_customer(customer_id: int):
     conn = sqlite3.connect("db.sqlite")

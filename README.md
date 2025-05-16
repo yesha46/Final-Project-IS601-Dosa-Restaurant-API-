@@ -1,4 +1,4 @@
-# Dosa Restaurant Management API
+# API: Dosa Restaurant
 
 This is a RESTful API backend for managing a Dosa Restaurant, built using FastAPI and SQLite. The API supports full CRUD operations for managing Customers, Items and Orders. It also loads real order data from example_orders.json file.
 

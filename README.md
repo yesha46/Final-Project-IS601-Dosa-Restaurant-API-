@@ -1,20 +1,22 @@
-Dosa Restaurant Management API
+# Dosa Restaurant Management API
 
 This is a RESTful API backend for managing a Dosa Restaurant, built using FastAPI and SQLite. The API supports full CRUD operations for managing Customers, Items and Orders. It also loads real order data from example_orders.json file.
 
-Project Structure:
+## Project Structure:
 
-dosa_api_project contains the following files:
+The Project contains the following files:
 
-1. db.sqlite                SQLite database file
-2. init_db.py               Initializes the database with required tables
-3. main.py                  FastAPI app with all CRUD endpoints
-4. load_from_json.py        Loads data from example_orders.json into the database
-5. example_orders.json      JSON dataset used to populate customers, items, and orders
-6. README.md                
+1. db.sqlite                
+2. init_db.py               
+3. main.py                  
+4. load_from_json.py        
+5. example_orders.json
+6. customers.json
+7. items.json     
+8. README.md                
 
 
-How to Run the Project:
+## How to Run the Project:
 
 1. Install Dependencies
 
@@ -37,7 +39,7 @@ How to Run the Project:
 - Open your browser and navigate to http://127.0.0.1:8000/docs
 - This opens the interactive Swagger UI for testing all endpoints.
 
-API Endpoints:
+## API Endpoints:
 
 1. Customers
 - POST /customers/ – Add a new customer
@@ -57,7 +59,7 @@ API Endpoints:
 - PUT /orders/{id} – Update an order
 - DELETE /orders/{id} – Cancel an order
 
-Features:
+## Features:
 
 - FastAPI with auto-generated Swagger UI
 - SQLite backend with relational schema and foreign keys
